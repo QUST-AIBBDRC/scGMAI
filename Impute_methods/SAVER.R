@@ -1,0 +1,5 @@
+library(SAVER)     
+data  <- read.csv("data.csv")
+cortex <- as.matrix(data)
+cortex.saver <- saver(cortex, ncores = 12)
+write.csv(cortex.saver[["estimate"]],file='data_saver.csv')
